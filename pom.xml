@@ -26,6 +26,7 @@
     <modules>
         <module>quickstart-flink</module>
         <module>streampark-example</module>
+        <module>meiotds-develop</module>
     </modules>
 
     <properties>

@@ -1,5 +1,5 @@
 /*
-  * Licensed to the Apache Software Foundation (ASF) under one or more
+ * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
  * The ASF licenses this file to You under the Apache License, Version 2.0
@@ -30,6 +30,17 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 
 /**
  * @author benjobs
+ * create table if not exists t_user (
+ * `name` varchar(25),
+ * `age` INT,
+ * `gender` INT,
+ * `address` varchar(25)
+ * );
+ * <p>
+ * bin/kafka-topics.sh --bootstrap-server hadoop101:9092 --create --topic streampark --partitions 1 --replication-factor 1
+ * bin/kafka-console-producer.sh --bootstrap-server hadoop101:9092 --topic streampark
+ * <p>
+ * {"name": "tanbs", "age":25, "gender": 1, "address": "gz"}
  */
 public class QuickStartJavaApp {
 
@@ -44,7 +55,6 @@ public class QuickStartJavaApp {
                 .map((MapFunction<KafkaRecord<String>, JavaUser>) value ->
                         JsonUtils.read(value.value(), JavaUser.class))
                 .filter((FilterFunction<JavaUser>) value -> value.age < 30);
-
 
         new JdbcJavaSink<JavaUser>(context)
                 .sql((TransformFunction<JavaUser, String>) JavaUser::toSql)
