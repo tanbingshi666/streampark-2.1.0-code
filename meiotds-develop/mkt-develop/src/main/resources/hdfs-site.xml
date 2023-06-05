@@ -18,35 +18,34 @@
 
 <configuration>
 
-<!-- NameNode 数据存储目录 -->
- <property>
- <name>dfs.namenode.name.dir</name>
- <value>file://${hadoop.tmp.dir}/namenode</value>
- </property>
-
-<!-- DataNode 数据存储目录 -->
- <property>
- <name>dfs.datanode.data.dir</name>
- <value>file://${hadoop.tmp.dir}/datanode</value>
- </property>
-
-<!-- nn web端访问地址-->
-	<property>
-        <name>dfs.namenode.http-address</name>
-        <value>hadoop101:9870</value>
+    <!-- NameNode 数据存储目录 -->
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file://${hadoop.tmp.dir}/namenode</value>
     </property>
-    
-<!-- 2nn web端访问地址-->
+
+    <!-- DataNode 数据存储目录 -->
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file://${hadoop.tmp.dir}/datanode</value>
+    </property>
+
+    <!-- nn web端访问地址-->
+    <property>
+        <name>dfs.namenode.http-address</name>
+        <value>hadoop102:9870</value>
+    </property>
+
+    <!-- 2nn web端访问地址-->
     <property>
         <name>dfs.namenode.secondary.http-address</name>
-        <value>hadoop103:9868</value>
+        <value>hadoop104:9868</value>
     </property>
-    
-<!-- 测试环境指定HDFS副本的数量1 -->
+
+    <!-- 测试环境指定HDFS副本的数量1 -->
     <property>
         <name>dfs.replication</name>
         <value>1</value>
     </property>
 
 </configuration>
-

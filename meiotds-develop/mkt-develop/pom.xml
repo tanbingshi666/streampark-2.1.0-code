@@ -30,6 +30,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--  使用 hadoop 存储 flink 状态后端          -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+        </dependency>
+
         <!--  https://flink.apache.org/downloads/#maven-dependencies      -->
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -49,6 +55,12 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka</artifactId>
+        </dependency>
+
+        <!--    flink 文件系统连接器        -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-files</artifactId>
         </dependency>
 
     </dependencies>
