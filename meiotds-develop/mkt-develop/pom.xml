@@ -30,6 +30,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--  https://www.hutool.cn/docs/#/          -->
+        <!--  hutool 工具包          -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
         <!--  使用 hadoop 存储 flink 状态后端          -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -48,6 +55,25 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients</artifactId>
+        </dependency>
+
+        <!--   https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/deployment/advanced/logging/         -->
+        <!--   flink log4j 日志         -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
         </dependency>
 
         <!--    https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/connectors/datastream/kafka/        -->
