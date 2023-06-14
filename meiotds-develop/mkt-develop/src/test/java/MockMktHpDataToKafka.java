@@ -23,10 +23,10 @@ public class MockMktHpDataToKafka {
         //创建一个KafkaProducer对象，传入上面创建的Properties对象
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(kafkaProps);
 
-        for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < 1; i++) {
             JSONObject json = JSONUtil.parseObj(message);
             json.set("ts", System.currentTimeMillis());
-            producer.send(new ProducerRecord<>("MKT_INFUSION_PUMP_HP_SERIES_JSON", json.toJSONString(0)));
+            producer.send(new ProducerRecord<>("temp_06_12", json.toJSONString(0)));
             try {
                 Thread.sleep(5 * 1000L);
             } catch (InterruptedException e) {
